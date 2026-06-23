@@ -1,4 +1,5 @@
-export const columns = [
+
+export const getColumns = (navigate) => [
         {
             field: "Customer Name",
             headerName: "Customer Name",
@@ -9,7 +10,7 @@ export const columns = [
                         cursor: "pointer",
                         textDecoration: "underline",
                     }}
-                    onClick={() => navigate(`/CustomerDetails/${row.id}`)}
+                    onClick={() => navigate(`/customers/${row.id}`)}
                 >
                     {row['Customer Name']}
                 </span>

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "../../Services/supabase"
 import { Link, useNavigate } from "react-router-dom";
 import { type } from "@testing-library/user-event/dist/type";
-import { columns } from "./CustomerColunms";
+import { getColumns } from "./CustomerColunms";
 
 
 
@@ -42,7 +42,7 @@ const CustomerPage = () => {
                 </div>
             ))}
             <CommonTable
-                columns={columns}
+                columns={getColumns(navigate)}
                 rows={customers}
             />
 
