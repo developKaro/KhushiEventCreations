@@ -33,7 +33,10 @@ const CustomerDetails = () => {
 
   return (
     <div>
-      <h2>Customer Details</h2>
+      <h2>
+        Welcome <strong>{customer['Customer Name']}</strong>
+      </h2>
+      <h3>Customer Details</h3>
       <p><strong>Name:</strong> {customer['Customer Name']}</p>
       <p><strong>Mobile:</strong> {customer['Customer Phone']}</p>
       <p><strong>Email:</strong> {customer.email}</p>
