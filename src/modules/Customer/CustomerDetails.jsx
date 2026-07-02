@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { supabase } from '../../supabaseClient';
+import { supabase } from '../../Services/supabase';
 
 const CustomerDetails = () => {
   const { id } = useParams();
@@ -14,7 +14,7 @@ const CustomerDetails = () => {
   const getCustomerDetails = async () => {
     try {
       const { data, error } = await supabase
-        .from('Customers')
+        .from('Customer')
         .select('*')
         .eq('id', id)
         .single();
@@ -34,7 +34,7 @@ const CustomerDetails = () => {
   return (
     <div>
       <h2>
-        Welcome <strong>{customer['Customer Name']}</strong>
+        <strong>{customer['Customer Name']}</strong>
       </h2>
       <h3>Customer Details</h3>
       <p><strong>Name:</strong> {customer['Customer Name']}</p>
